@@ -1,0 +1,34 @@
+# Generated ./api and ./authoring type declarations — emitted from the JSDoc in
+# api/**/*.mjs and authoring/**/*.mjs by scripts/sync-api-types.mjs. Not committed
+# (like dist/ in the other packages); regenerated automatically at `prepack` so the
+# published tarball always ships a fresh, in-sync type surface. Run
+# `pnpm sync:api-types` to produce them locally.
+#
+# authoring/index.d.ts is deliberately NOT here: it is the hand-curated public
+# barrel (grouped + commented), not an emitted artifact.
+api/**/*.d.mts
+api/*.d.mts
+authoring/**/*.d.mts
+authoring/*.d.mts
+foundation/**/*.d.mts
+foundation/*.d.mts
+.api-verify/
+
+# Transient fixture dir written by authoring-migration.tsc.test.mjs (runs the
+# real tsc over migrated output); created + removed per test run.
+.codemod-tsc-*/
+
+# Stored component lists of the shipped templates, written at `prepack` by
+# scripts/generate-template-components.mjs so the published package reads them
+# instead of parsing each template's source. Not committed: a checkout parses.
+assets/templates/components.generated.json
+
+# Stored exports of the shipped plain-data doc files, written at `prepack` by
+# scripts/generate-stored-docs.mjs so the published package reads them instead
+# of importing each doc. Not committed: a checkout imports every doc.
+assets/docs.generated.json
+
+# The root help's command list, written at `prepack` by
+# scripts/generate-command-list.mjs so the published package prints its root
+# help without loading every command. Not committed: a checkout loads them.
+clients/cli/commands.generated.json
